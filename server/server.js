@@ -1190,7 +1190,7 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "../public/index.html"));
 });
 
-const PORT = process.env.PORT || 3000;
+const PORT = parseInt(process.env.PORT, 10) || 3000;
 app.listen(PORT, () => {
   console.log(`OneCard Chatbot → http://localhost:${PORT}`);
   if (!process.env.GEMINI_API_KEY || process.env.GEMINI_API_KEY === "your_gemini_api_key_here") {
